@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Next.js E-commerce Application
 
-## Getting Started
+This is a simplified E-commerce website built with Next.js (App Router), Tailwind CSS, and integrated with a provided backend API.
+It includes authentication, products, cart, and orders functionality.
 
-First, run the development server:
+🚀 Features
+Public Pages
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+/ → Homepage showing all products
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+/products/[id] → Product details with Add to Cart
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+/login → User login
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+/register → New user registration
 
-## Learn More
+Authenticated Pages
 
-To learn more about Next.js, take a look at the following resources:
+/cart → View cart, checkout order
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/orders → View past orders
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Additional
 
-## Deploy on Vercel
+Dynamic Navbar (Login/Logout, Cart, Orders)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Protected routes (redirect to login if not authenticated)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Token stored in localStorage
+
+Loading and error handling
+
+🛠 Tech Stack
+
+Framework: Next.js
+ (App Router)
+
+Styling: Tailwind CSS v4
+
+State Management: React Context API
+
+HTTP Client: Axios
+
+Authentication: JWT token (localStorage)
+
+⚡ API Endpoints Used
+
+Base URL: https://globosoft.co.uk/ecommerce-api
+
+Auth
+
+POST /api/auth/register.php
+
+POST /api/auth/login.php
+
+Products
+
+GET /api/products/list.php
+
+GET /api/products/details.php?id={id}
+
+Cart
+
+POST /api/cart/add.php
+
+GET /api/cart/view.php
+
+POST /api/checkout/checkout.php
+
+Orders
+
+GET /api/orders/list.php
+
+ecommerce-nextjs/
+│── app/              # Next.js App Router pages
+│   ├── page.js       # Homepage (Products list)
+│   ├── login/        # Login page
+│   ├── register/     # Register page
+│   ├── products/     # Product details
+│   ├── cart/         # Cart page
+│   └── orders/       # Orders page
+│
+│── components/       # Navbar, ProductCard, Loader, ProtectedRoute
+│── context/          # AuthContext (login/logout, token)
+│── lib/              # Axios API helpers
+│── public/           # Static assets
+"# ecommerce-nextjs" 
