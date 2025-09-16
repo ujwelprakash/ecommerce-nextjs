@@ -7,26 +7,39 @@ export default function Navbar() {
 
   return (
     <nav className="flex justify-between items-center p-4 bg-blue-600 text-white">
-      <Link href="/" className="text-lg font-bold">
+      <Link href="/" className="text-lg font-bold hover:text-gray-200">
         E-Shop
       </Link>
-      <div className="flex gap-4">
-        <Link href="/">Products</Link>
+
+      <div className="flex gap-4 items-center">
+        <Link href="/" className="hover:text-gray-200">
+          Products
+        </Link>
+
         {token ? (
           <>
-            <Link href="/cart">Cart</Link>
-            <Link href="/orders">Orders</Link>
+            <Link href="/cart" className="hover:text-gray-200">
+              Cart
+            </Link>
+            <Link href="/orders" className="hover:text-gray-200">
+              Orders
+            </Link>
             <button
               onClick={logout}
-              className="bg-red-500 px-3 py-1 rounded text-white"
+              aria-label="Logout"
+              className="bg-red-500 hover:bg-red-600 px-3 py-1 rounded text-white transition"
             >
               Logout
             </button>
           </>
         ) : (
           <>
-            <Link href="/login">Login</Link>
-            <Link href="/register">Register</Link>
+            <Link href="/login" className="hover:text-gray-200">
+              Login
+            </Link>
+            <Link href="/register" className="hover:text-gray-200">
+              Register
+            </Link>
           </>
         )}
       </div>

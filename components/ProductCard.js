@@ -1,10 +1,17 @@
 import Link from "next/link";
 
 export default function ProductCard({ product }) {
+  // ✅ Fallback handling for missing/relative images
+  const imageUrl = product.image
+    ? product.image.startsWith("http")
+      ? product.image
+      : `https://globosoft.co.uk/ecommerce-api/${product.image}`
+    : "https://placehold.co/300x200?text=No+Image"; // fallback
+
   return (
     <div className="border rounded-lg p-4 shadow hover:shadow-lg transition bg-white">
       <img
-        src={product.image}
+        src={imageUrl}
         alt={product.name}
         className="w-full h-40 object-cover rounded"
       />
