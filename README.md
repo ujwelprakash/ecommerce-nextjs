@@ -1,87 +1,47 @@
-Next.js E-commerce Application
+# 🛒 E-commerce Next.js Project
 
-This is a simplified E-commerce website built with Next.js (App Router), Tailwind CSS, and integrated with a provided backend API.
-It includes authentication, products, cart, and orders functionality.
+A fully functional e-commerce web application built using **Next.js (App Router)**, **Tailwind CSS v4**, **Axios**, and **Context API**.  
+The project demonstrates authentication, product listing, cart management, and order history using a real API.
 
-🚀 Features
-Public Pages
+---
 
-/ → Homepage showing all products
+## 🔗 Links
+- **Live Demo**: [Vercel Deployment](https://ecommerce-nextjs-lime-ten.vercel.app/)  
+- **Repository**: [GitHub Repo](https://github.com/ujwelprakash/ecommerce-nextjs/)  
 
-/products/[id] → Product details with Add to Cart
+---
 
-/login → User login
+## 🚀 Features
+- **Authentication**
+  - Register new users
+  - Login with JWT token stored in localStorage
+  - Protected routes with AuthContext
+- **Products**
+  - List all products
+  - View product details
+  - Add products to cart
+- **Cart**
+  - View items in cart
+  - Checkout functionality with API integration
+- **Orders**
+  - View past orders
+- **UI/UX**
+  - Responsive layout with TailwindCSS
+  - Error handling and logs for debugging
+  - Dynamic Navbar (Login/Logout, Cart, Orders)
 
-/register → New user registration
+---
 
-Authenticated Pages
+## ⚙️ Tech Stack
+- **Frontend**: Next.js (App Router), Tailwind CSS v4, Axios, Context API  
+- **Backend API**: [GloboSoft E-commerce API](https://globosoft.co.uk/ecommerce-api)  
 
-/cart → View cart, checkout order
+---
 
-/orders → View past orders
+## 📦 Installation & Setup
 
-Additional
+Clone the repository:
+```bash
+git clone https://github.com/ujwelprakash/ecommerce-nextjs.git
+cd ecommerce-nextjs
 
-Dynamic Navbar (Login/Logout, Cart, Orders)
-
-Protected routes (redirect to login if not authenticated)
-
-Token stored in localStorage
-
-Loading and error handling
-
-🛠 Tech Stack
-
-Framework: Next.js
- (App Router)
-
-Styling: Tailwind CSS v4
-
-State Management: React Context API
-
-HTTP Client: Axios
-
-Authentication: JWT token (localStorage)
-
-⚡ API Endpoints Used
-
-Base URL: https://globosoft.co.uk/ecommerce-api
-
-Auth
-
-POST /api/auth/register.php
-
-POST /api/auth/login.php
-
-Products
-
-GET /api/products/list.php
-
-GET /api/products/details.php?id={id}
-
-Cart
-
-POST /api/cart/add.php
-
-GET /api/cart/view.php
-
-POST /api/checkout/checkout.php
-
-Orders
-
-GET /api/orders/list.php
-
-ecommerce-nextjs/
-│── app/              # Next.js App Router pages
-│   ├── page.js       # Homepage (Products list)
-│   ├── login/        # Login page
-│   ├── register/     # Register page
-│   ├── products/     # Product details
-│   ├── cart/         # Cart page
-│   └── orders/       # Orders page
-│
-│── components/       # Navbar, ProductCard, Loader, ProtectedRoute
-│── context/          # AuthContext (login/logout, token)
-│── lib/              # Axios API helpers
-│── public/           # Static assets
-"# ecommerce-nextjs" 
